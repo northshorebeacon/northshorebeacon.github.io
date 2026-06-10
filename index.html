@@ -195,11 +195,14 @@
 
           <aside class="top-deck-side" id="furry-friend">
             <article class="panel compact-furry">
-              <p class="section-label">Northshore Furry Friend of the Week</p>
+              <p class="section-label">Northshore Furry Friend of the Day</p>
               <figure class="compact-furry-media">
                 <img
-                  src="assets/furry-friend-1.jpg"
-                  alt="Small dog looking upward outdoors"
+                  id="furry-friend-image"
+                  src="assets/furry-friend-2.jpg"
+                  alt="Happy rescue dog with a red bandana looking toward the camera"
+                  data-images='["assets/furry-friend-2.jpg","assets/furry-friend-4.jpg","assets/furry-friend-5.jpg"]'
+                  data-alts='["Happy rescue dog with a red bandana looking toward the camera","Curious tan dog with a big nose looking up at the camera","Smiling rescue dog looking up from the floor"]'
                 />
               </figure>
               <h4>
@@ -234,7 +237,8 @@
                 </a>
               </div>
               <p class="mini-note">
-                Uses licensed stock photography while linking readers to official shelter listings.
+                Rotates daily using licensed dog photography while linking readers to official
+                shelter listings.
               </p>
             </article>
           </aside>
@@ -498,5 +502,23 @@
         <p>Independent local reporting focused on balanced, honest news and civic life.</p>
       </footer>
     </div>
+    <script>
+      (() => {
+        const image = document.getElementById("furry-friend-image");
+        if (!image) return;
+
+        const images = JSON.parse(image.dataset.images || "[]");
+        const alts = JSON.parse(image.dataset.alts || "[]");
+        if (!images.length) return;
+
+        const now = new Date();
+        const localDayNumber =
+          Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000;
+        const dayIndex = localDayNumber % images.length;
+
+        image.src = images[dayIndex];
+        image.alt = alts[dayIndex] || image.alt;
+      })();
+    </script>
   </body>
 </html>

@@ -339,7 +339,8 @@ p {
 .story-grid,
 .briefs-grid,
 .split-band,
-.spotlight-grid {
+.spotlight-grid,
+.spotlight-media {
   display: grid;
   gap: 1rem;
 }
@@ -387,6 +388,28 @@ p {
   flex-direction: column;
   justify-content: center;
   gap: 0.8rem;
+}
+
+.spotlight-media {
+  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-rows: auto auto auto;
+}
+
+.spotlight-shot {
+  overflow: hidden;
+  min-height: 12rem;
+}
+
+.spotlight-shot-large {
+  grid-row: 1 / span 2;
+  min-height: 25rem;
+}
+
+.spotlight-shot img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .kicker {
@@ -470,12 +493,18 @@ p {
   .two-up,
   .split-band,
   .briefs-grid,
-  .spotlight-grid {
+  .spotlight-grid,
+  .spotlight-media {
     grid-template-columns: 1fr;
   }
 
   .hero-story {
     min-height: 24rem;
+  }
+
+  .spotlight-shot-large {
+    grid-row: auto;
+    min-height: 19rem;
   }
 }
 

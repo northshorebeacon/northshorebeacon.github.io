@@ -1,0 +1,469 @@
+:root {
+  --bg: #f6f4f2;
+  --bg-deep: #e8ebef;
+  --ink: #1f2530;
+  --muted: #66707d;
+  --line: rgba(31, 37, 48, 0.1);
+  --panel: rgba(255, 255, 255, 0.97);
+  --panel-strong: rgba(252, 252, 253, 0.98);
+  --accent: #b94b59;
+  --accent-soft: #d98992;
+  --olive: #5a7090;
+  --gold: #aeb9c8;
+  --shadow: 0 18px 44px rgba(31, 37, 48, 0.08);
+  --headline-font: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --body-font: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--body-font);
+  background:
+    radial-gradient(circle at top right, rgba(185, 75, 89, 0.08), transparent 24%),
+    radial-gradient(circle at left 14%, rgba(90, 112, 144, 0.09), transparent 22%),
+    linear-gradient(180deg, #fffdfb 0%, var(--bg) 52%, #eef1f5 100%);
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(24, 33, 38, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 33, 38, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.site-shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 0.9rem 0 3rem;
+  position: relative;
+}
+
+.topbar,
+.hero-grid,
+.section-block,
+.split-band,
+.newsletter,
+.site-footer,
+.ticker {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  padding: 1.15rem 0 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(19, 32, 43, 0.09);
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-mark {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.4rem;
+  background: linear-gradient(180deg, #485f82, #243447);
+  color: #f8fbff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow,
+.section-label,
+.kicker,
+.brief-tag,
+.ticker-label {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.eyebrow,
+.section-label,
+.brief-tag,
+.ticker-label {
+  color: var(--accent);
+}
+
+.eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--headline-font);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 4.3rem);
+}
+
+h2 {
+  font-size: clamp(2.3rem, 4.8vw, 4.9rem);
+  max-width: 12ch;
+}
+
+h3 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+h4 {
+  font-size: 1.55rem;
+  margin-top: 0.5rem;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.tagline,
+.hero-summary,
+.story-card p,
+.wide-card p,
+.brief p,
+.feature-stack p,
+.newsletter p,
+.weather-row p {
+  color: var(--muted);
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: end;
+}
+
+.topnav a,
+.text-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.topnav a {
+  font-size: 0.96rem;
+  padding-bottom: 0.18rem;
+  border-bottom: 2px solid transparent;
+}
+
+.hero-story a,
+.story-card a,
+.wide-card a,
+.brief a,
+.pulse-card a,
+.weather-card a,
+.ticker-track a,
+.feature-stack a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topnav a:hover,
+.text-link:hover {
+  color: var(--accent);
+}
+
+.topnav a:hover {
+  border-color: rgba(185, 75, 89, 0.32);
+}
+
+.hero-story a:hover,
+.story-card a:hover,
+.wide-card a:hover,
+.brief a:hover,
+.pulse-card a:hover,
+.weather-card a:hover,
+.ticker-track a:hover,
+.feature-stack a:hover {
+  color: var(--accent);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 1rem;
+}
+
+.hero-story {
+  position: relative;
+  padding: 1.6rem;
+  min-height: 29rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(28, 36, 50, 0.04)),
+    linear-gradient(135deg, rgba(46, 63, 87, 0.98), rgba(97, 119, 151, 0.92));
+  color: #fbfdff;
+  overflow: hidden;
+}
+
+.hero-story::after {
+  content: "";
+  position: absolute;
+  inset: auto -8% -22% auto;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14), transparent 68%);
+  pointer-events: none;
+}
+
+.hero-summary {
+  font-size: 1.05rem;
+  max-width: 48ch;
+  margin-top: 1rem;
+  color: rgba(245, 249, 253, 0.82);
+}
+
+.story-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  color: rgba(235, 242, 249, 0.74);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.hero-rail {
+  display: grid;
+  gap: 1rem;
+}
+
+.pulse-card,
+.weather-card,
+.story-card,
+.wide-card,
+.brief,
+.feature-stack,
+.newsletter {
+  padding: 1.25rem;
+}
+
+.pulse-card {
+  animation: rise 650ms ease both;
+  border-top: 4px solid rgba(185, 75, 89, 0.72);
+}
+
+.mini-list {
+  margin: 0.85rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.8rem;
+}
+
+.weather-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.9rem;
+}
+
+.weather-row strong {
+  font-family: var(--headline-font);
+  font-size: 2.4rem;
+  color: var(--olive);
+}
+
+.ticker {
+  margin-top: 1rem;
+  padding: 0.95rem 1.1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  overflow: hidden;
+  background: #2c3f57;
+  color: #f4f8fc;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  min-width: 100%;
+  animation: ticker-scroll 28s linear infinite;
+}
+
+.section-block {
+  margin-top: 2.3rem;
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.story-grid,
+.briefs-grid,
+.split-band {
+  display: grid;
+  gap: 1rem;
+}
+
+.three-up {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.two-up,
+.split-band {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.briefs-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.kicker {
+  color: var(--olive);
+}
+
+.warm {
+  background:
+    linear-gradient(135deg, rgba(185, 75, 89, 0.08), rgba(252, 252, 253, 0.98)),
+    var(--panel-strong);
+}
+
+.newsletter {
+  margin-top: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background:
+    radial-gradient(circle at right top, rgba(90, 112, 144, 0.12), transparent 34%),
+    var(--panel-strong);
+}
+
+.newsletter-box {
+  min-width: 15rem;
+  padding: 1rem 1.1rem;
+  border-radius: 0.75rem;
+  background: rgba(44, 63, 87, 0.96);
+  color: #f6f9fc;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.newsletter-box span {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.8rem;
+  padding-top: 1.15rem;
+  border-top: 2px solid rgba(19, 32, 43, 0.09);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-45%);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .topbar,
+  .newsletter,
+  .site-footer {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .hero-grid,
+  .three-up,
+  .two-up,
+  .split-band,
+  .briefs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-story {
+    min-height: 24rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-shell {
+    width: min(100% - 1rem, 1180px);
+  }
+
+  h2 {
+    max-width: 100%;
+  }
+
+  .brand-row {
+    align-items: start;
+  }
+
+  .ticker {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .ticker-track {
+    animation-duration: 36s;
+  }
+}

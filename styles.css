@@ -338,7 +338,9 @@ p {
 
 .story-grid,
 .briefs-grid,
-.split-band {
+.split-band,
+.rescue-grid,
+.dog-gallery {
   display: grid;
   gap: 1rem;
 }
@@ -354,6 +356,63 @@ p {
 
 .briefs-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rescue-grid {
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: stretch;
+}
+
+.rescue-feature {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rescue-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rescue-note {
+  margin-top: auto;
+  padding: 1rem 1.05rem;
+  border-radius: 0.8rem;
+  background: linear-gradient(135deg, rgba(185, 75, 89, 0.08), rgba(90, 112, 144, 0.08));
+  border: 1px solid rgba(31, 37, 48, 0.08);
+}
+
+.rescue-note strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.dog-gallery {
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.dog-shot {
+  overflow: hidden;
+  min-height: 13rem;
+}
+
+.dog-shot-large {
+  grid-row: 1 / span 2;
+  min-height: 27rem;
+}
+
+.dog-shot img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .kicker {
@@ -436,12 +495,19 @@ p {
   .three-up,
   .two-up,
   .split-band,
-  .briefs-grid {
+  .briefs-grid,
+  .rescue-grid,
+  .dog-gallery {
     grid-template-columns: 1fr;
   }
 
   .hero-story {
     min-height: 24rem;
+  }
+
+  .dog-shot-large {
+    grid-row: auto;
+    min-height: 20rem;
   }
 }
 

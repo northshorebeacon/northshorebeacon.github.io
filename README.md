@@ -1,16 +1,16 @@
 # Northshore Beacon
 
-Local static prototype for a Northshore / St. Tammany current-events site concept.
+Static site for Northshore Beacon, a local news brand focused on St. Tammany Parish and the Louisiana Northshore.
 
-## What this is
+## Overview
 
-- A local-only homepage prototype
-- Sample/demo editorial content for layout testing
-- Not published anywhere
+- Homepage and styling for the published site
+- Editorial-style layout built around local outbound coverage and quick briefs
+- Brand presentation for Northshore-focused news coverage
 
 ## Files
 
-- `index.html` - homepage prototype
+- `index.html` - homepage
 - `styles.css` - visual system and responsive layout
 
 ## Preview locally
@@ -26,9 +26,3 @@ Then open:
 ```text
 http://localhost:8000
 ```
-
-## Notes
-
-- All headlines and blurbs are placeholder copy.
-- This is designed as a first-pass concept, not a production CMS build.
-- No deployment or publishing is included in this prototype.

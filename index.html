@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Northshore Beacon | St. Tammany News With Washington Parish Coverage</title>
+    <title>Northshore Beacon | St. Tammany and Washington Parish News</title>
     <meta
       name="description"
-      content="Northshore Beacon curates current St. Tammany Parish headlines first, with select Washington Parish civic, public-safety, business, and community coverage across the Louisiana Northshore."
+      content="Northshore Beacon curates current civic, public-safety, business, and community headlines from St. Tammany and Washington Parish across the Louisiana Northshore."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -14,14 +14,14 @@
     <div class="site-shell">
       <header class="topbar">
         <div class="brand-lockup">
-          <p class="eyebrow">St. Tammany First | Washington Parish Included</p>
+          <p class="eyebrow">Local News Across the Northshore</p>
           <div class="brand-row">
             <span class="brand-mark">NB</span>
             <div>
               <h1>Northshore Beacon</h1>
               <p class="tagline">
-                Current St. Tammany headlines first, plus select Washington Parish updates in one
-                clean local read.
+                Daily headlines, civic updates, and community stories from St. Tammany and
+                Washington Parish.
               </p>
               <p class="live-status"><!-- AUTO:UPDATED:START -->
 <span class="live-dot"></span> Updated Sunday, June 14, 2026
@@ -141,13 +141,13 @@
             <article class="panel compact-furry">
               <p class="section-label">Northshore Furry Friend of the Day</p>
               <figure class="compact-furry-media">
-                <img
-                  id="furry-friend-image"
-                  src="assets/furry-friend-2.jpg"
-                  alt="Happy rescue dog with a red bandana looking toward the camera"
-                  data-images='["assets/furry-friend-2.jpg","assets/furry-friend-4.jpg","assets/furry-friend-5.jpg"]'
-                  data-alts='["Happy rescue dog with a red bandana looking toward the camera","Curious tan dog with a big nose looking up at the camera","Smiling rescue dog looking up from the floor"]'
-                />
+                <!-- AUTO:DOG-IMAGE:START -->
+<img
+  id="furry-friend-image"
+  src="assets/public-domain-dogs/pd-dog-4.jpg"
+  alt="Rescue dog in harness during a training or duty moment"
+/>
+<!-- AUTO:DOG-IMAGE:END -->
               </figure>
               <h4>
                 <a
@@ -405,12 +405,11 @@
         <section class="newsletter panel">
           <div>
             <p class="section-label">Morning Briefing</p>
-            <h3>Balanced coverage led by St. Tammany, with Washington Parish in view</h3>
+            <h3>Northshore news with a steady local lens</h3>
             <p>
               Northshore Beacon follows government, growth, public safety, culture, and community
-              life across St. Tammany Parish first, then layers in useful Washington Parish
-              coverage with fresh links, official-source updates, and a calm local-first
-              approach.
+              life across St. Tammany and Washington Parish with fresh links, official-source
+              updates, and a calm, readable local focus.
             </p>
           </div>
           <div class="newsletter-box">
@@ -421,27 +420,9 @@
       </main>
 
       <footer class="site-footer">
-        <p>Northshore Beacon covers St. Tammany Parish first, with added Washington Parish coverage.</p>
+        <p>Northshore Beacon covers St. Tammany and Washington Parish with a calm local focus.</p>
         <p>Independent local reporting focused on balanced, honest news and civic life.</p>
       </footer>
     </div>
-    <script>
-      (() => {
-        const image = document.getElementById("furry-friend-image");
-        if (!image) return;
-
-        const images = JSON.parse(image.dataset.images || "[]");
-        const alts = JSON.parse(image.dataset.alts || "[]");
-        if (!images.length) return;
-
-        const now = new Date();
-        const localDayNumber =
-          Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000;
-        const dayIndex = localDayNumber % images.length;
-
-        image.src = images[dayIndex];
-        image.alt = alts[dayIndex] || image.alt;
-      })();
-    </script>
   </body>
 </html>

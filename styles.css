@@ -1,16 +1,19 @@
 :root {
-  --bg: #f6f4f2;
-  --bg-deep: #e8ebef;
-  --ink: #1f2530;
-  --muted: #66707d;
-  --line: rgba(31, 37, 48, 0.1);
-  --panel: rgba(255, 255, 255, 0.97);
-  --panel-strong: rgba(252, 252, 253, 0.98);
-  --accent: #b94b59;
-  --accent-soft: #d98992;
-  --olive: #5a7090;
-  --gold: #aeb9c8;
-  --shadow: 0 18px 44px rgba(31, 37, 48, 0.08);
+  --bg: #f4f7fc;
+  --bg-deep: #e6edf8;
+  --ink: #18263b;
+  --muted: #647489;
+  --line: rgba(24, 38, 59, 0.1);
+  --panel: rgba(255, 255, 255, 0.98);
+  --panel-strong: rgba(251, 252, 255, 0.99);
+  --accent: #c8455f;
+  --accent-soft: #e7a7b4;
+  --navy: #17345f;
+  --navy-soft: #355d96;
+  --powder: #edf4ff;
+  --blush: #fff1f4;
+  --gold: #c4d0df;
+  --shadow: 0 18px 44px rgba(22, 39, 70, 0.09);
   --headline-font: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   --body-font: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
 }
@@ -28,9 +31,9 @@ body {
   color: var(--ink);
   font-family: var(--body-font);
   background:
-    radial-gradient(circle at top right, rgba(185, 75, 89, 0.08), transparent 24%),
-    radial-gradient(circle at left 14%, rgba(90, 112, 144, 0.09), transparent 22%),
-    linear-gradient(180deg, #fffdfb 0%, var(--bg) 52%, #eef1f5 100%);
+    radial-gradient(circle at top right, rgba(200, 69, 95, 0.09), transparent 24%),
+    radial-gradient(circle at left 16%, rgba(53, 93, 150, 0.1), transparent 26%),
+    linear-gradient(180deg, #fffefe 0%, var(--bg) 54%, #edf2fb 100%);
   min-height: 100vh;
 }
 
@@ -72,7 +75,19 @@ body::before {
   gap: 2rem;
   padding: 1.15rem 0 1.5rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid rgba(19, 32, 43, 0.09);
+  border-bottom: 2px solid rgba(23, 52, 95, 0.1);
+}
+
+.topbar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-soft) 42%, var(--accent) 100%);
+  opacity: 0.92;
 }
 
 .brand-row {
@@ -87,7 +102,9 @@ body::before {
   display: grid;
   place-items: center;
   border-radius: 0.4rem;
-  background: linear-gradient(180deg, #485f82, #243447);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 48%),
+    linear-gradient(180deg, var(--navy-soft), var(--navy));
   color: #f8fbff;
   border: 1px solid rgba(255, 255, 255, 0.2);
   font-weight: 800;
@@ -200,6 +217,10 @@ p {
   border-bottom: 2px solid transparent;
 }
 
+.topnav a:not(:hover) {
+  color: rgba(23, 52, 95, 0.9);
+}
+
 .hero-story a,
 .story-card a,
 .wide-card a,
@@ -214,11 +235,11 @@ p {
 
 .topnav a:hover,
 .text-link:hover {
-  color: var(--accent);
+  color: var(--navy-soft);
 }
 
 .topnav a:hover {
-  border-color: rgba(185, 75, 89, 0.32);
+  border-color: rgba(53, 93, 150, 0.34);
 }
 
 .hero-story a:hover,
@@ -253,8 +274,9 @@ p {
   flex-direction: column;
   justify-content: end;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(28, 36, 50, 0.04)),
-    linear-gradient(135deg, rgba(46, 63, 87, 0.98), rgba(97, 119, 151, 0.92));
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(28, 36, 50, 0.02)),
+    linear-gradient(135deg, rgba(22, 52, 100, 0.98), rgba(48, 92, 159, 0.92) 58%, rgba(196, 69, 95, 0.9) 100%);
   color: #fbfdff;
   overflow: hidden;
 }
@@ -304,7 +326,9 @@ p {
 
 .pulse-card {
   animation: rise 650ms ease both;
-  border-top: 4px solid rgba(185, 75, 89, 0.72);
+  border-top: 4px solid rgba(23, 52, 95, 0.85);
+  background:
+    linear-gradient(180deg, rgba(237, 244, 255, 0.82), rgba(255, 255, 255, 0.98));
 }
 
 .mini-list {
@@ -325,7 +349,7 @@ p {
 .weather-row strong {
   font-family: var(--headline-font);
   font-size: 2.4rem;
-  color: var(--olive);
+  color: var(--navy-soft);
 }
 
 .ticker {
@@ -335,7 +359,8 @@ p {
   gap: 1rem;
   align-items: center;
   overflow: hidden;
-  background: #2c3f57;
+  background:
+    linear-gradient(90deg, rgba(23, 52, 95, 0.98) 0%, rgba(36, 73, 124, 0.98) 58%, rgba(200, 69, 95, 0.94) 100%);
   color: #f4f8fc;
   border-color: rgba(255, 255, 255, 0.08);
 }
@@ -400,6 +425,8 @@ p {
   gap: 0.85rem;
   position: sticky;
   top: 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 241, 244, 0.85), rgba(255, 255, 255, 0.98));
 }
 
 .compact-furry-media {
@@ -447,7 +474,7 @@ p {
 
 .spotlight-note {
   background:
-    linear-gradient(135deg, rgba(185, 75, 89, 0.08), rgba(90, 112, 144, 0.1)),
+    linear-gradient(135deg, rgba(200, 69, 95, 0.08), rgba(53, 93, 150, 0.11)),
     var(--panel-strong);
   display: flex;
   flex-direction: column;
@@ -478,12 +505,12 @@ p {
 }
 
 .kicker {
-  color: var(--olive);
+  color: var(--navy-soft);
 }
 
 .warm {
   background:
-    linear-gradient(135deg, rgba(185, 75, 89, 0.08), rgba(252, 252, 253, 0.98)),
+    linear-gradient(135deg, rgba(255, 241, 244, 0.96), rgba(237, 244, 255, 0.96)),
     var(--panel-strong);
 }
 
@@ -494,7 +521,8 @@ p {
   justify-content: space-between;
   gap: 1.5rem;
   background:
-    radial-gradient(circle at right top, rgba(90, 112, 144, 0.12), transparent 34%),
+    radial-gradient(circle at right top, rgba(53, 93, 150, 0.13), transparent 34%),
+    radial-gradient(circle at left center, rgba(200, 69, 95, 0.08), transparent 28%),
     var(--panel-strong);
 }
 
@@ -502,7 +530,7 @@ p {
   min-width: 15rem;
   padding: 1rem 1.1rem;
   border-radius: 0.75rem;
-  background: rgba(44, 63, 87, 0.96);
+  background: linear-gradient(180deg, rgba(38, 73, 122, 0.98), rgba(23, 52, 95, 0.98));
   color: #f6f9fc;
   display: grid;
   gap: 0.35rem;
@@ -514,13 +542,20 @@ p {
   font-weight: 700;
 }
 
+.story-card,
+.wide-card,
+.brief {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 249, 255, 0.98));
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   margin-top: 1.8rem;
   padding-top: 1.15rem;
-  border-top: 2px solid rgba(19, 32, 43, 0.09);
+  border-top: 2px solid rgba(23, 52, 95, 0.1);
   color: var(--muted);
   font-size: 0.92rem;
 }
